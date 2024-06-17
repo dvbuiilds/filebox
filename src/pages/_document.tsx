@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="title" content="PWA with Next 13" />
+        <meta name="title" content="FileBox" />
         <meta name="description" content="PWA application with Next 13" />
         <meta name="generator" content="Next.js" />
         <meta
