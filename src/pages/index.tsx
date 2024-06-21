@@ -1,18 +1,16 @@
-import { Inter } from "next/font/google";
+// COMPONENTS
 import { Navbar } from "@f-box/components/Navbar";
 import { Sidebar, SidebarItem } from "@f-box/components";
-import { MdOutlineBackup } from "react-icons/md";
 import { CommonDisplay } from "@f-box/components/CommonDisplay";
 
-const inter = Inter({ subsets: ["latin"] });
+// ICONS
+import { MdOutlineBackup } from "react-icons/md";
 
 export default function Home() {
   return (
-    <section>
-      <section>
-        <Navbar />
-      </section>
-      <section className="flex flex-row items-start overflow-hidden">
+    <section className="h-screen flex flex-col">
+      <Navbar />
+      <div className="flex flex-row flex-grow overflow-hidden">
         <Sidebar>
           <SidebarItem
             label="Backed-Up Files"
@@ -21,7 +19,7 @@ export default function Home() {
           />
         </Sidebar>
         <CommonDisplay />
-      </section>
+      </div>
     </section>
   );
 }

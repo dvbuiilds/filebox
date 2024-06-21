@@ -21,7 +21,15 @@ export const Photo: React.FC<PhotoProps> = ({ asset }) => {
         );
       case "video":
         return (
-          <video src={url} controls style={{ width: "100%", height: "auto" }} />
+          <video
+            src={url}
+            controls
+            style={
+              width > height
+                ? { width: `${width}px`, height: "auto" }
+                : { width: "auto", height: `${height}px` }
+            }
+          />
         );
       case "audio":
         return <FaMusic size="3em" />;
@@ -37,5 +45,9 @@ export const Photo: React.FC<PhotoProps> = ({ asset }) => {
     }
   };
 
-  return <div className="p-2 border rounded-md">{renderMedia()}</div>;
+  return (
+    <div className="p-2 flex-grow flex-shrink-0 bg-gray-100 border rounded-md cursor-pointer flex justify-center items-center">
+      {renderMedia()}
+    </div>
+  );
 };

@@ -5,6 +5,7 @@ interface ButtonProps extends React.ComponentProps<"button"> {
   Icon?: ReactNode;
   size?: "small" | "medium" | "large";
   nature?: "info" | "success" | "warning" | "danger" | "dull";
+  fullWidth?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -12,6 +13,7 @@ export const Button: React.FC<ButtonProps> = ({
   Icon,
   size = "medium",
   nature = "info",
+  fullWidth = false,
   ...props
 }) => {
   const sizeClasses = {
@@ -33,7 +35,8 @@ export const Button: React.FC<ButtonProps> = ({
       className={clsx(
         "inline-flex items-center justify-center rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2",
         sizeClasses[size],
-        natureClasses[nature]
+        natureClasses[nature],
+        fullWidth ? "w-full" : ""
       )}
       {...props}
     >

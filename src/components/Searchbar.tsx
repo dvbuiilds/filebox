@@ -14,7 +14,7 @@ export const Searchbar = () => {
   };
 
   return (
-    <div className="flex items-center bg-gray-100 rounded py-2 px-4 focus-within:ring-2 focus-within:ring-blue-500 w-4/5 md:w-full">
+    <div className="flex items-center bg-gray-100 rounded py-2 px-4 focus-within:ring-2 focus-within:ring-blue-500 w-full">
       <IoSearchSharp className="text-gray-500 mr-2" />
       <input
         type="text"

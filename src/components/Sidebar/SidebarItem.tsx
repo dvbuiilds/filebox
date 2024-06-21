@@ -14,7 +14,7 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
 }) => {
   return (
     <div
-      className={`flex items-center py-4 px-6 cursor-pointer gap-4 ${
+      className={`flex items-center py-4 px-3 cursor-pointer gap-4 ${
         isActive ? "bg-gray-300" : "bg-white hover:bg-gray-200"
       }  transition-all`}
       {...otherSidebarProps}

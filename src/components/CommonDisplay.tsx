@@ -5,14 +5,14 @@ import { PhotoGrid } from "./PhotoGrid";
 
 const dummyAssets: MediaAsset[] = [
   {
-    width: 1920,
-    height: 1080,
+    width: 384,
+    height: 216,
     mediaType: "image",
-    url: "https://via.placeholder.com/1920x1080",
+    url: "https://via.placeholder.com/192x108",
   },
   {
-    width: 1280,
-    height: 720,
+    width: 256,
+    height: 144,
     mediaType: "video",
     url: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
@@ -32,9 +32,15 @@ const dummyAssets: MediaAsset[] = [
 
 export const CommonDisplay: React.FC = () => {
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Media Assets</h1>
-      <PhotoGrid assets={dummyAssets} />
+    <div className="p-4 grow overflow-y-scroll bg-white">
+      <PhotoGrid
+        assets={[
+          ...dummyAssets,
+          ...dummyAssets,
+          ...dummyAssets,
+          ...dummyAssets,
+        ]}
+      />
     </div>
   );
 };

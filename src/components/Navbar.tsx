@@ -8,22 +8,19 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { FiUpload } from "react-icons/fi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { Searchbar } from "./Searchbar";
-import { useWindowSize } from "@f-box/hooks";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  // to be removed
-  const [width] = useWindowSize();
-  console.log({ width });
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
-      <div className="text-2xl font-bold">FileBox</div>
+    <nav className="h-18 bg-gray-800 text-white p-4 flex justify-between items-center">
+      <a href="/">
+        <div className="text-2xl font-bold">FileBox</div>
+      </a>
       <div className="hidden md:flex space-x-4 w-3/5">
         <Searchbar />
         <Button size="medium" nature="info" Icon={<FiUpload />}>
@@ -39,18 +36,23 @@ export const Navbar = () => {
         </button>
       </div>
       {isOpen && (
-        <div className="absolute top-16 right-4 bg-gray-800 border border-gray-700 rounded shadow-md md:hidden">
+        <div className="absolute z-10 top-16 right-4 bg-gray-800 border border-gray-700 rounded shadow-md md:hidden">
           <ul className="flex flex-col space-y-2 p-4">
-            <li>
+            <li className="rounded bg-yellow-200">
               <Searchbar />
             </li>
             <li>
-              <Button size="medium" nature="info" Icon={<FiUpload />}>
+              <Button size="medium" nature="info" Icon={<FiUpload />} fullWidth>
                 Upload
               </Button>
             </li>
             <li>
-              <Button size="medium" nature="dull" Icon={<IoSettingsOutline />}>
+              <Button
+                size="medium"
+                nature="dull"
+                Icon={<IoSettingsOutline />}
+                fullWidth
+              >
                 Settings
               </Button>
             </li>
